@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Sunflower:wght@300;500;700&display=swap');
+
+/* default style */
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 16px;
+  font-weight: 400;
+}
+*:not(i) {
+  font-family: 'Roboto', sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+:before,
+:after {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+.container {
+  max-width: 1140px;
+  margin: auto;
+}
+
+header,
+section,
+footer {
+  display: block;
+  width: 100%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.justify-content-between {
+  /*헤더와 네비게이션을 양쪽 끝으로 배치*/
+  justify-content: space-between;
+}
+.align-item-center {
+  align-items: center;
+}
+
+/* header */
+.header {
+  /*부모 엘리먼트 내부에 속박되지 않고, 독립된 배치 문맥을 가지게 된다. 따라서, 엘리먼트를 기본적으로 브라우저 화면(viewport) 상에서 어디든지 원하는 위치에 자유롭게 배치시킬 수 있으며, 심지어 부모 엘리먼트 위에 겹쳐서 배치할 수도 있다.*/
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.header .logo {
+  padding: 0 15px;
+}
+.header .logo a {
+  font-size: 30px;
+  color: #ffffff;
+  font-weight: bold;
+  font-family: 'Great Vibes', cursive;
+  letter-spacing: 2px;
+}
+.header .nav {
+  padding: 0 15px;
+}
+.header .nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.header .nav ul li {
+  display: inline-block; /*일자로 자리차지*/
+  margin-left: 25px; /*메뉴 왼쪽 30px 줘서 자간 늘림*/
+}
+.header .nav ul li a {
+  display: block;
+  padding: 25px 0;
+  color: #ffffff;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+/* home section */
+.home-section {
+  min-width: 100vh;
+  position: relative;
+}
+.home-section .slide {
+  background-position: center; /*사진을 무조건 중간으로 배치*/
+  background-size: cover; /*사진을 페이지 크기에 맞추기*/
+  position: relative;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* opacity: 0;
+  visibility: hidden; */
+}
+.home-section .slide .active {
+  /* opacity: 1;
+  visibility: visible; */
+}
+.home-section .slide:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.home-section .row {
+  min-height: 100vh;
+}
+.home-section .home-content {
+  /* background-color: red; */
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 15px;
+  text-align: center;
+}
+.home-section .home-content p {
+  color: #ffffff;
+  margin: 0 0 15px;
+  font-family: 'Sunflower', sans-serif;
+}
+/* .home-section .slide.active .home-content p {
+  opacity: 0;
+  animation: fadeInTop 1s ease forwards;
+}
+@keyframes fadeInTop {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+} */
+.home-section .home-content h1 {
+  color: #ffffff;
+  margin: 0;
+  font-weight: normal;
+  font-family: 'Sunflower', sans-serif;
+}
+/* .home-section .slide.active .home-content h1 {
+  opacity: 0;
+  animation: fadeInTop 1s ease forwards;
+  animation-delay: 0.5s;
+} */
+.home-section .home-content span {
+  font-size: 20px;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  color: #ffffff;
+  padding: 7px 30px;
+  margin: 15px 0 0;
+}
+/* .home-section .slide.active .home-content span {
+  opacity: 0;
+  animation: fadeInTop 1s ease forwards;
+  animation-delay: 1s;
+} */
