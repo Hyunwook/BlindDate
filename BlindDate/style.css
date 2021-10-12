@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Sunflower:wght@300;500;700&display=swap');
+
+/* default style */
+body{
+	margin:0;
+	line-height: 1.5;
+	font-size: 16px;
+	font-weight: 400;
+	background-color: #f3f2f1;
+}
+*:not(i){
+	font-family: 'Roboto', sans-serif;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;
+}
+:before,:after{
+	box-sizing: border-box;
+}
+img{
+	max-width: 100%;
+	vertical-align: middle;
+}
+.container{
+	max-width: 1140px;
+	margin:auto;
+}
+header,
+section,
+footer{
+	display: block;
+	width: 100%;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+.justify-content-between{
+	/*헤더와 네비게이션을 양쪽 끝으로 배치*/
+	justify-content: space-between;
+}
+.justify-content-center{
+	justify-content: center;
+}
+.align-items-center{
+	align-items: center;
+}
+.section-title{
+	flex:0 0 100%;
+	max-width: 100%;
+	padding:0 15px;
+	text-align: center;
+	margin-bottom: 60px;
+}
+.section-title h2{
+	font-size: 45px;
+	color: #000000;
+	font-weight: 700;
+	font-family: "Great Vibes", cursive;
+	letter-spacing: 2px;
+	margin:0;
+	text-transform: capitalize;
+}
+
+.btn-1{
+	padding:10px 35px;
+	color:#ffffff;
+	font-size: 16px;
+	cursor: pointer;
+	border:2px solid transparent;
+	cursor: pointer;
+	text-decoration: none;
+	display: inline-block;
+	transition:all 0.5s ease;
+	font-weight: 500;
+}
+.btn-1:focus{
+	outline: none;
+}
+.btn-1:hover{
+	background-color: transparent;
+}
+
+/* preloader */
+.preloader{
+	position: fixed;
+	left:0;
+	top:0;
+	height: 100%;
+	width: 100%;
+	background-color: #111111;
+	z-index: 2000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.preloader .loader{
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+.preloader .loader:before{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	border:3px solid transparent;
+	border-radius: 50%;
+	animation: loaderSpin 2s linear infinite;
+}
+@keyframes loaderSpin{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+	    transform: rotate(360deg);	
+	}
+}
+.preloader .loader i{
+   font-size: 20px;
+   animation: loader 2s linear infinite;
+}
+@keyframes loader {
+	0%,100%{
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(0.7);
+	}
+}
+/* header */
+.header{
+	/*부모 엘리먼트 내부에 속박되지 않고, 독립된 배치 문맥을 가지게 된다. 따라서, 엘리먼트를 기본적으로 브라우저 화면(viewport) 상에서 어디든지 원하는 위치에 자유롭게 배치시킬 수 있으며, 심지어 부모 엘리먼트 위에 겹쳐서 배치할 수도 있다.*/
+	position: fixed;
+	width: 100%;
+	left:0;
+	top:0;
+	z-index: 99;
+	border-bottom: 1px solid rgba(255,255,255,0.1);
+	transition: all 0.5s ease;
+}
+.header.fixed{
+	background-color: #ffffff;
+	box-shadow: 0 0 8px #cccccc;
+}
+.header .logo{
+	padding:0 15px;
+}
+.header .logo a{
+	font-size: 30px;
+	color:#ffffff;
+	font-weight: bold;
+	font-family: 'Great Vibes', cursive;
+	letter-spacing: 2px;
+	transition: all 0.5s ease;
+}
+.header.fixed .logo a{
+	color:#000000;
+}
+.header .hamburger-btn{
+	display: inline-block;
+	height: 34px;
+	width: 40px;
+	border-radius: 3px;
+	border:1px solid #ffffff;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s ease;
+	display: none;
+}
+.header.fixed .hamburger-btn{
+	border-color: #000000;
+	background-color: #000000;
+}
+.header .hamburger-btn span{
+	display: block;
+	height: 1px;
+	width: 16px;
+	background-color: #ffffff;
+	position: relative;
+	transition: all 0.5s ease;
+}
+.header .hamburger-btn span:before,
+.header .hamburger-btn span:after{
+	content: '';
+	position: absolute;
+	height: 1px;
+	width: 100%;
+	left: 0;
+	background-color: #ffffff;
+}
+.header .hamburger-btn span:before{
+	top:-6px;
+}
+.header .hamburger-btn span:after{
+	top:6px;
+}
+.header .nav{
+	padding:0 15px;
+}
+.header .nav ul{
+	list-style: none; 
+	margin:0;
+	padding:0;
+}
+.header .nav ul li{
+	display: inline-block; /*일자로 자리차지*/
+	margin-left: 30px; /*메뉴 왼쪽 30px 줘서 자간 늘림*/
+}
+.header .nav ul li a{
+	display: block;
+	padding:25px 0;
+	color:#ffffff;
+	font-size: 15px;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition:color 0.5s ease;
+}
+.header.fixed .nav ul li a{
+	color: #555555;
+}
+/* home section */
+.home-section{
+	min-height: 100vh;
+	position: relative;
+}
+.home-section .slide{
+	background-position: center; /*사진을 무조건 중간으로 배치*/
+	background-size: cover; /*사진을 페이지 크기에 맞추기*/
+	position:absolute;
+	z-index: 1;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	opacity:0;
+	visibility: hidden;
+	transition: all 1s ease-in-out;
+}
+.home-section .slide.active{
+	opacity:1;
+	visibility: visible;
+}
+.home-section .slide:before{
+	content: '';
+	position: absolute;
+	left:0;
+	top:0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.7);
+	z-index: -1;
+}
+.home-section .row{
+	min-height: 100vh;
+}
+.home-section .home-content{
+	flex:0 0 100%;
+	max-width: 100%; /*라인 차지하기*/
+	padding:0 15px;
+	text-align: center;
+}
+.home-section .home-content p{
+  font-size: 22px;
+	color:#ffffff;
+	margin:0 0 15px;
+	font-family: 'Sunflower', sans-serif;
+}
+.home-section .slide.active .home-content p{
+	opacity:0;
+	animation: fadeInTop 1s ease forwards;
+}
+@keyframes fadeInTop{
+	0%{
+		transform: translateY(-50px);
+	}
+	100%{
+		opacity:1;
+		transform: translateY(0px);
+	}
+}
+.home-section .home-content h1{
+  font-size: 40px;
+	color:#ffffff;
+	margin:0;
+	font-weight: normal;
+	font-family: 'Sunflower', sans-serif;
+}
+.home-section .slide.active .home-content h1{
+	opacity:0;
+	animation: fadeInTop 1s ease forwards;
+	animation-delay: 0.5s;
+}
+.home-section .home-content span{
+	font-size: 20px;
+	display: inline-block;
+	border:1px solid #ffffff;
+	border-radius: 30px;
+	color:#ffffff;
+	padding:7px 30px; /*위아래, 좌우*/
+	margin:15px 0 0;
+}
+.home-section .slide.active .home-content span{
+	opacity:0;
+	animation: fadeInTop 1s ease forwards;
+	animation-delay: 1s;
+}
